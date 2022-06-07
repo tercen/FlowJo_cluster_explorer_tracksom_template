@@ -1,11 +1,11 @@
 {
   "kind": "Workflow",
-  "id": "d3b28c70bfe6dbd2b380b8ea73527f10",
+  "id": "740f6a7ff855067504d5b026be5a971b",
   "isDeleted": false,
-  "rev": "3-29b31b43a2fe73efda34e6a7f9638124",
+  "rev": "2-e24d2edc222f652a4a537f6638b2d869",
   "description": "Performs TrackSOM (cluster n=15) and views the results with a heatmap and minimum spanning tree (MST). TrackSOM clusters are also visualized in a heatmap using MEM score. 2D plot with Flt-SNE and UMAP. Downsampling filter applied (1%).  For use with the FlowJo plugin uploaded data.",
   "name": "FlowJo Cluster Explorer - TrackSOM",
-  "createdBy": "MartinE",
+  "createdBy": "MahoTercen",
   "acl": {
     "kind": "Acl",
     "owner": "FlowJoTest",
@@ -13,11 +13,11 @@
   },
   "createdDate": {
     "kind": "Date",
-    "value": "2022-05-25T13:18:28.790074Z"
+    "value": "2022-06-02T13:12:52.996299Z"
   },
   "lastModifiedDate": {
     "kind": "Date",
-    "value": "2022-05-30T08:44:59.771989Z"
+    "value": "2022-06-02T13:12:53.779836Z"
   },
   "urls": [
     {
@@ -37,12 +37,12 @@
   ],
   "url": {
     "kind": "Url",
-    "uri": "https://github.com/tercen/FlowJo_cluster_explorer_tracksom_template"
+    "uri": "https://github.com/tercen/FlowJo_advanced_cluster_explorer_tracksom_template"
   },
   "version": "0.0.1",
   "authors": [],
   "isPublic": false,
-  "projectId": "d3b28c70bfe6dbd2b380b8ea7352a0a6",
+  "projectId": "c6c39898547ab62c753a2094cc9034d6",
   "folderId": "",
   "links": [
     {
@@ -364,7 +364,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8247
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
@@ -456,7 +456,7 @@
             {
               "kind": "Pair",
               "key": "ram",
-              "value": "20000000000"
+              "value": "0"
             },
             {
               "kind": "Pair",
@@ -503,7 +503,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8
+          "nRows": 1
         },
         "taskId": ""
       },
@@ -744,9 +744,9 @@
           "namespace": "Cluster",
           "operatorRef": {
             "kind": "OperatorRef",
-            "name": "hclust",
-            "version": "0.10.0",
-            "operatorId": "6cb476eeed67413abbf51fc96ab9ca1f",
+            "name": "Hclust - Order",
+            "version": "1.1.1",
+            "operatorId": "740f6a7ff855067504d5b026be55b220",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -758,6 +758,16 @@
                 "kind": "PropertyValue",
                 "name": "center",
                 "value": "false"
+              },
+              {
+                "kind": "PropertyValue",
+                "name": "method",
+                "value": "single"
+              },
+              {
+                "kind": "PropertyValue",
+                "name": "metric",
+                "value": "euclidean"
               },
               {
                 "kind": "PropertyValue",
@@ -1076,7 +1086,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 60
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
@@ -1175,7 +1185,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8
+          "nRows": 1
         },
         "taskId": ""
       },
@@ -1215,7 +1225,7 @@
         "topLeft": {
           "kind": "Point",
           "x": 924.5050000000001,
-          "y": 210.5
+          "y": 211.5
         }
       },
       "state": {
@@ -1365,7 +1375,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8221
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
@@ -1378,10 +1388,16 @@
           "operatorRef": {
             "kind": "OperatorRef",
             "name": "FIt-SNE",
-            "version": "0.0.4",
-            "operatorId": "6cb476eeed67413abbf51fc96ab9ee8f",
+            "version": "0.1.3",
+            "operatorId": "740f6a7ff855067504d5b026be47e400",
             "operatorKind": "ROperator",
-            "propertyValues": [],
+            "propertyValues": [
+              {
+                "kind": "PropertyValue",
+                "name": "seed",
+                "value": "-1"
+              }
+            ],
             "url": {
               "kind": "Url",
               "uri": "https://github.com/tercen/fast_tSNE_operator"
@@ -1443,7 +1459,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8
+          "nRows": 1
         },
         "taskId": ""
       },
@@ -1633,7 +1649,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8221
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
@@ -1646,8 +1662,8 @@
           "operatorRef": {
             "kind": "OperatorRef",
             "name": "umap",
-            "version": "0.0.3",
-            "operatorId": "2288dd7fd84029a249a58e72560ebe91",
+            "version": "1.2.0",
+            "operatorId": "740f6a7ff855067504d5b026be482e21",
             "operatorKind": "ROperator",
             "propertyValues": [
               {
@@ -1674,6 +1690,16 @@
                 "kind": "PropertyValue",
                 "name": "pca",
                 "value": "NULL"
+              },
+              {
+                "kind": "PropertyValue",
+                "name": "prop.train",
+                "value": "1"
+              },
+              {
+                "kind": "PropertyValue",
+                "name": "seed",
+                "value": "-1"
               }
             ],
             "url": {
@@ -1737,7 +1763,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8
+          "nRows": 1
         },
         "taskId": ""
       },
@@ -2514,7 +2540,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 60
+          "nRows": 1
         },
         "filters": {
           "kind": "Filters",
@@ -2592,7 +2618,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 8
+          "nRows": 1
         },
         "taskId": ""
       },
@@ -3687,7 +3713,7 @@
             {
               "kind": "Pair",
               "key": "ram",
-              "value": "20000000000"
+              "value": "0"
             },
             {
               "kind": "Pair",
@@ -3818,7 +3844,7 @@
             }
           ],
           "rectangleSelections": [],
-          "nRows": 832570
+          "nRows": 1
         },
         "taskId": ""
       },
